@@ -34,7 +34,7 @@ The soccer_masters repository contains:
 - 4 active branches to scrap and tranform different datasets:
 1. Authored by Hunter: [web_scraping](https://github.com/jbtrahin/soccer_masters/tree/web_scraping)
 2. Authored by Alfredo: [Champions_League](https://github.com/jbtrahin/soccer_masters/tree/Champions_League)
-3. Authored by Amik: [tbd]()
+3. Authored by Amik: [Premier League](https://github.com/jbtrahin/soccer_masters/tree/premier_league)
 4. Authored by JB [mpg_scraping](https://github.com/jbtrahin/soccer_masters/tree/web_scraping)
 
 ## Machine Learning Model
