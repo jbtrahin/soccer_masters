@@ -5,6 +5,7 @@ Building an app to predict the best premier league fantasy soccer players week-o
 
 **Goal** 
 We want to build a web app that will predict the best premier league fantasy soccer players week-over-week.
+More about it on these [google slides](https://docs.google.com/presentation/d/1YtSbjRKvxFkOw0FImH7IjGVvhv1ygMPneUkmmDmC6IA/edit?usp=sharing).
 
 **High-Level Roadmap:**
 1. Build scrapper on Jupyter Notebooks (in progress).
