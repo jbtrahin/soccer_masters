@@ -12,8 +12,8 @@ More about it on these [google slides](https://docs.google.com/presentation/d/1Y
 1. Build scrapper on Jupyter Notebooks (in progress).
 2. Build ETL process to build clean dataframe (in progress).
 3. Define machine learning model (in progress).
-4. Train and Test machine learning model.
-5. Deploy a Flask app to Heroku with a Postgres database.
+4. Train and Test machine learning model (in progress).
+5. Deploy a Flask app to Heroku with a Postgres database (in progress).
 6. Push data to database.
 7. Connect Machine Learning script to database.
 8. Collect outcome of model and store in database.
