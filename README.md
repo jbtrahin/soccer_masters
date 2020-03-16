@@ -3,7 +3,7 @@ Building an app to predict the best premier league fantasy soccer players week-o
 
 ## Presentation
 
-**Goal:** We want to build a web app that will predict tthe best premier league fantasy soccer players week-over-week.
+**Goal:** We want to build a web app that will predict the best premier league fantasy soccer players week-over-week.
 
 **High-Level Roadmap:**
 1. Build scrapper on Jupyter Notebooks (in progress).
@@ -15,8 +15,6 @@ Building an app to predict the best premier league fantasy soccer players week-o
 7. Connect Machine Learning script to database.
 8. Collect outcome of model and store in database.
 9. Build front end (bootstrap template) to display results in a user-friendly way.
-10. Build a Javascript app that compares model output to actual live results to evaluate model performances.
-
 
 ## Resources
 - Software/Toolkit: Visual Studio Code 1.39.0, Jupyter Notebook 6.0.3, Heroku 7.0.0, Flask 1.1.1, SQLAlchemy 1.3.9
@@ -32,18 +30,30 @@ Building an app to predict the best premier league fantasy soccer players week-o
 The soccer_masters repository contains:
 - [A master branch](https://github.com/jbtrahin/soccer_masters)
 - 4 active branches to scrap and tranform different datasets:
+
 1. Authored by Hunter: [web_scraping](https://github.com/jbtrahin/soccer_masters/tree/web_scraping)
+    - dataset from English Premier League website (html scraping)
+    - neural network model outline
+    
 2. Authored by Alfredo: [Champions_League](https://github.com/jbtrahin/soccer_masters/tree/Champions_League)
+    - dataset from English Premier League website (html scraping)
+    - database configuration
+    
 3. Authored by Amik: [Premier League](https://github.com/jbtrahin/soccer_masters/tree/premier_league)
-4. Authored by JB [mpg_scraping](https://github.com/jbtrahin/soccer_masters/tree/web_scraping)
+    - dataset from Champions League website (html scraping)
+    - linear regression model outline
+    
+4. Authored by JB [mpg_scraping](https://github.com/jbtrahin/soccer_masters/tree/mpg_scraping)
+    - dataset from MPG Fantasy Site (api scraping)
+    - Heroku instance set up
+    - Flask app set up
+    - Front end initiation
 
 ## Machine Learning Model
-
 Using Scikit-learn and TensorFlow libraries, we'll be experimenting with different models:
 - Linear Regression models
 - Neural Networks
 
 ## Database
-
 We'll use one of Heroku managed data service to create a Heroku Postgres instance that we'll connect to through a Flask app.
 
