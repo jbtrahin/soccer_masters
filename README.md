@@ -1,9 +1,10 @@
-# soccer_masters
+# Soccer Masters
 Building an app to predict the best premier league fantasy soccer players week-over-week.
 
-## Presentation
+## Project Overview
 
-**Goal:** We want to build a web app that will predict the best premier league fantasy soccer players week-over-week.
+**Goal** 
+We want to build a web app that will predict the best premier league fantasy soccer players week-over-week.
 
 **High-Level Roadmap:**
 1. Build scrapper on Jupyter Notebooks (in progress).
@@ -17,7 +18,7 @@ Building an app to predict the best premier league fantasy soccer players week-o
 9. Build front end (bootstrap template) to display results in a user-friendly way.
 
 ## Resources
-- Software/Toolkit: Visual Studio Code 1.39.0, Jupyter Notebook 6.0.3, Heroku 7.0.0, Flask 1.1.1, SQLAlchemy 1.3.9
+- Software/Toolkit: Visual Studio Code 1.39.0, Jupyter Notebook 6.0.3, Heroku 7.0.0, Flask 1.1.1, SQLAlchemy 1.3.9, Postgres
 - Languages: Python 3.7
 - ETL & Scrapping Libraries: pandas 1.0.1, splinter 0.13.0, beautifulsoup4 4.8.2
 - Machine Learning Libraries: scikit-learn 0.22.1, TensorFlow 2.0 r2.1,
@@ -25,7 +26,7 @@ Building an app to predict the best premier league fantasy soccer players week-o
 1. MPG soccer public API (ex: https://api.monpetitgazon.com/championship/match/1059901)
 2. FBREF Website (https://fbref.com/)
 
-## Github Branches and description
+## Github Branches and Description
 
 The soccer_masters repository contains:
 - [A master branch](https://github.com/jbtrahin/soccer_masters)
