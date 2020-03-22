@@ -1,0 +1,10 @@
+<form action="/" method="POST">
+    <select>
+        <option value="first_25_days">First 25 Days</option>
+        <option value="25_to_50">25-50</option>
+        <option value="50_to_75">50-75</option>
+    </select>
+    <input type="submit">
+</form>
+
+{{ fwd_avg_df.to_html()|safe }}
