@@ -17,50 +17,42 @@ from sqlalchemy import create_engine, func
 # Set up Instances
 app = Flask( __name__ )
 
-app.config['DATABASE_URL'] = '@ref:postgresql-silhouetted-31152'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://tklyplugonrpes:1d19818b40604e8d36f7dd7f66de9713540fd45412c8cec9661c5f2d694da75c@ec2-54-80-184-43.compute-1.amazonaws.com:5432/d43qmrqacsbjj0'
 
-heroku = Heroku(app)
+# heroku = Heroku(app)
 
 db = SQLAlchemy(app)
 
 
-# Set up Database
+# Set up a route to display data
 
-class Dataentry(db.Model):
-    __tablename__ = "dataentry"
-    id = db.Column(db.Integer, primary_key=True)
-    mydata = db.Column(db.Text())
+@app.route("/", method=['GET'])
+def get_from_db():
+    # Just return an <html> <table> containing the data JB query from the DB
+  
+    fwd_avg_df = pd.read_sql('''SELECT * FROM "FWD_Avg"''', con=db.engine)
+    # Just return some JSON containing the ....
+    #return jsonify(fwd_avg_df.to_json())#{'data': ['some data'] })#'' # show html
+    return render_template('homepage.html', fwd_avg_df=fwd_avg_df)
 
-    def __init__ (self, mydata):
-        self.mydata = mydata
-
-# Set up a route to receive data
-
-@app.route("/scrape")
-
-def post_to_db():
-    indata = Dataentry(request.form['mydata'])
-    data = copy(indata. __dict__ )
-    del data["_sa_instance_state"]
-    try:
-        db.session.add(indata)
-        db.session.commit()
-    except Exception as e:
-        print("\n FAILED entry: {}\n".format(json.dumps(data)))
-        print(e)
-        sys.stdout.flush()
-    return 'Success! To enter more data, <a href="{}">click here!</a>'.format(url_for("enter_data"))
-
-# Set up a route to enter data
-
-@app.route("/")
-
-def enter_data(): 
-    return render_template("homepage.html")
-
+@app.route("/", method=['POST'])
+def get_from_db():
+    # Just return an <html> <table> containing the data JB query from the DB
+  
+    fwd_avg_df = pd.read_sql('''SELECT * FROM "FWD_Avg"''', con=db.engine)#TODO: Filter the dataframe, based on the <select> values , the user sent
+    # Just return some JSON containing the ....
+    #return jsonify(fwd_avg_df.to_json())#{'data': ['some data'] })#'' # show html
+    return render_template('homepage.html', fwd_avg_df=fwd_avg_df)
+# Set up a route to display dashboard
+  
+@app.route("/dashboard")
+def get_from_homepage():
+    # Return some HTML with references to the Tableau
+    return ''
 
 # Run the app
-
-if __name__ == ' __main__':
+print(__name__)
+if __name__ == '__main__':
+    print('this code is running')
     app.debug = True
     app.run()
