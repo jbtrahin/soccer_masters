@@ -1,10 +1,56 @@
-<form action="/" method="POST">
-    <select>
-        <option value="first_25_days">First 25 Days</option>
-        <option value="25_to_50">25-50</option>
-        <option value="50_to_75">50-75</option>
-    </select>
-    <input type="submit">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Soccer-Masters Homepage</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+                
+        </style>
+    </head>
 
-{{ fwd_avg_df.to_html()|safe }}
+    <body>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="/">Soccer Masters</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <form action="/" method="POST">
+            <select>
+                <div>
+                    <label>prediction_game27</label>
+                    <option value="prediction_game27">Prediction 1 (game 27)</option>
+                </div>
+                <div>
+                    <label>prediction_game28</label>
+                    <option value="prediction_game28">Prediction 2 (game 28)</option>
+                </div>
+                <div>
+                    <label>prediction_game29</label>
+                    <option value="prediction_game29">Prediction 3 (game 29)</option>
+                </div>
+            </select>
+            <input type="submit">
+        </form>
+        <div class="container">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="table">
+                    <span>{{ fwd_avg_df_game27.to_html()|safe }}</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
