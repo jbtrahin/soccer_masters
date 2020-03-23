@@ -9,15 +9,15 @@ We want to build a web app that will predict the best premier league fantasy soc
 More about it on these [google slides](https://docs.google.com/presentation/d/1YtSbjRKvxFkOw0FImH7IjGVvhv1ygMPneUkmmDmC6IA/edit?usp=sharing).
 
 **High-Level Roadmap:**
-1. Build scrapper on Jupyter Notebooks (in progress).
-2. Build ETL process to build clean dataframe (in progress).
-3. Define machine learning model (in progress).
+1. Build scrapper on Jupyter Notebooks (**done**).
+2. Build ETL process to build clean dataframe (**done**).
+3. Define machine learning model (**done**).
 4. Train and Test machine learning model (in progress).
-5. Deploy a Flask app to Heroku with a Postgres database (in progress).
-6. Push data to database.
-7. Connect Machine Learning script to database.
-8. Collect outcome of model and store in database.
-9. Build front end (bootstrap template) to display results in a user-friendly way.
+5. Deploy a Flask app to Heroku with a Postgres database (**done**).
+6. Push data to database (in progress).
+7. Push all data (input/output) into database (in progress).
+8. build tableau dasbhoard to compare performance of models.
+9. Build front end (bootstrap template) to display results in a user-friendly way (in progress).
 
 ## Resources:
 
