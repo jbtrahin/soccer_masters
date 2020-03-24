@@ -3,7 +3,6 @@ from flask import Flask, render_template, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import sys
 import json
-from flask_heroku import Heroku
 import pandas as pd 
 import datetime as dt
 import numpy as np
