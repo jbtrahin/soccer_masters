@@ -29,26 +29,25 @@
             </div>
         </nav>
         <form action="/" method="POST">
-            <select>
+            <select onchange="location = this.value">
                 <div>
                     <label>prediction_game27</label>
-                    <option value="prediction_game27">Prediction 1 (game 27)</option>
+                    <option value="/prediction/game_27">Prediction 1 (game 27)</option>
                 </div>
                 <div>
                     <label>prediction_game28</label>
-                    <option value="prediction_game28">Prediction 2 (game 28)</option>
+                    <option value="/prediction/game_28">Prediction 2 (game 28)</option>
                 </div>
                 <div>
                     <label>prediction_game29</label>
-                    <option value="prediction_game29">Prediction 3 (game 29)</option>
+                    <option value="/prediction/game_29">Prediction 3 (game 29)</option>
                 </div>
             </select>
-            <input type="submit">
         </form>
         <div class="container">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="table">
-                    <span>{{ fwd_avg_df_game27.to_html()|safe }}</span>
+                    <span>{{ fwd_avg_df_game.to_html()|safe }}</span>
                 </div>
             </div>
         </div>

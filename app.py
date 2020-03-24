@@ -24,10 +24,28 @@ db = SQLAlchemy(app)
 # Set up a route to display data
 
 @app.route("/", methods=["GET", "POST"])
-def get_from_db():
+def homepage():
     # Just return an <html> <table> containing the data JB query from the DB
-    fwd_avg_df_game27 = pd.read_sql('''SELECT * FROM "FWD_Avg"''', con=db.engine)   
-    return render_template('homepage.html', fwd_avg_df_game27=fwd_avg_df_game27)
+    fwd_avg_df_game = pd.read_sql('''SELECT * FROM "FWD_Avg"''', con=db.engine)   
+    return render_template('homepage.html', fwd_avg_df_game=fwd_avg_df_game)
+
+@app.route("/prediction/game_27")
+def get_prediction_27():
+    # Just return an <html> <table> containing the data JB query from the DB
+     fwd_avg_df_game = pd.read_sql('''SELECT * FROM "FWD_Avg"''', con=db.engine)   
+     return render_template('homepage.html', fwd_avg_df_game=fwd_avg_df_game)
+
+@app.route("/prediction/game_28")
+def get_prediction_28():
+    # Just return an <html> <table> containing the data JB query from the DB
+     fwd_avg_df_game = pd.read_sql('''SELECT * FROM "FWD_Avg" LIMIT 10''', con=db.engine)   
+     return render_template('homepage.html', fwd_avg_df_game=fwd_avg_df_game)
+
+@app.route("/prediction/game_29")
+def get_prediction_29():
+    # Just return an <html> <table> containing the data JB query from the DB
+     fwd_avg_df_game = pd.read_sql('''SELECT * FROM "FWD_Avg" LIMIT 1''', con=db.engine)   
+     return render_template('homepage.html', fwd_avg_df_game=fwd_avg_df_game)
 
 # Set up a route to display dashboard
   
