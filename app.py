@@ -46,7 +46,7 @@ def get_prediction_29():
 @app.route("/prediction/next_game")
 def get_prediction_next_game():
     # Just return an <html> <table> containing the data queried from the DB
-     fwd_avg_df_game = pd.read_sql('''SELECT * FROM "FWD_Avg LIMIT 1"''', con=db.engine, index_col=['index'])
+     fwd_avg_df_game = pd.read_sql('''SELECT * FROM "FWD_Avg" LIMIT 1''', con=db.engine, index_col=['index'])
      fwd_avg_df_game.index.name = None   
      return render_template('homepage.html', tables=[fwd_avg_df_game.to_html(classes='data')], titles=fwd_avg_df_game.columns.values)
 
