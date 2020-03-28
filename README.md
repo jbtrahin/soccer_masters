@@ -1,29 +1,27 @@
-# soccer_masters
+# Soccer Masters
 Building an app to predict the best premier league fantasy soccer players week-over-week.
 
-## Presentation
+## Project Overview
 
-**Goal/Reason for Topic:** We want to build a web app that will predict tthe best premier league fantasy soccer players week-over-week.
+**Goal:** 
 
-**Source of Data** We wanted to utilize a data source that provided the most detailed information for each soccer player. The site we used is fbref.com. This webiste provides details of each players metrics and performance. 
-
-**Questions to answer** Which player will outperform other players for a selected week? 
+We want to build a web app that will predict the best premier league fantasy soccer players week-over-week.
+More about it on these [google slides](https://docs.google.com/presentation/d/1YtSbjRKvxFkOw0FImH7IjGVvhv1ygMPneUkmmDmC6IA/edit?usp=sharing).
 
 **High-Level Roadmap:**
-1. Build scrapper on Jupyter Notebooks (in progress).
-2. Build ETL process to build clean dataframe (in progress).
-3. Define machine learning model (in progress).
-4. Train and Test machine learning model.
-5. Deploy a Flask app to Heroku with a Postgres database.
-6. Push data to database.
-7. Connect Machine Learning script to database.
-8. Collect outcome of model and store in database.
-9. Build front end (bootstrap template) to display results in a user-friendly way.
-10. Build a Javascript app that compares model output to actual live results to evaluate model performances.
+1. Build scrapper on Jupyter Notebooks (**done**).
+2. Build ETL process to build clean dataframe (**done**).
+3. Define machine learning model (**done**).
+4. Train and Test machine learning model (in progress).
+5. Deploy a Flask app to Heroku with a Postgres database (**done**).
+6. Push data to database (in progress).
+7. Push all data (input/output) into database (in progress).
+8. build tableau dasbhoard to compare performance of models.
+9. Build front end (bootstrap template) to display results in a user-friendly way (in progress).
 
+## Resources:
 
-## Resources
-- Software/Toolkit: Visual Studio Code 1.39.0, Jupyter Notebook 6.0.3, Heroku 7.0.0, Flask 1.1.1, SQLAlchemy 1.3.9
+- Software/Toolkit: Visual Studio Code 1.39.0, Jupyter Notebook 6.0.3, Heroku 7.0.0, Flask 1.1.1, SQLAlchemy 1.3.9, Postgres
 - Languages: Python 3.7
 - ETL & Scrapping Libraries: pandas 1.0.1, splinter 0.13.0, beautifulsoup4 4.8.2
 - Machine Learning Libraries: scikit-learn 0.22.1, TensorFlow 2.0 r2.1,
@@ -31,23 +29,39 @@ Building an app to predict the best premier league fantasy soccer players week-o
 1. MPG soccer public API (ex: https://api.monpetitgazon.com/championship/match/1059901)
 2. FBREF Website (https://fbref.com/)
 
-**Github Branches and description** Communication is to utilize a dedicated Slack Channel to communication status, progress, and any challenges we come across. 
+## Github Branches and Description:
 
 The soccer_masters repository contains:
 - [A master branch](https://github.com/jbtrahin/soccer_masters)
-- 4 active branches to scrap and tranform different datasets:
-1. Authored by Hunter: [web_scraping](https://github.com/jbtrahin/soccer_masters/tree/web_scraping)
-2. Authored by Alfredo: [Champions_League](https://github.com/jbtrahin/soccer_masters/tree/Champions_League)
-3. Authored by Amik: [tbd]()
-4. Authored by JB [mpg_scraping](https://github.com/jbtrahin/soccer_masters/tree/web_scraping)
+- 5 active branches to scrap and tranform different datasets:
 
-## Machine Learning Model
+1. Authored by Hunter: [web_scraping](https://github.com/jbtrahin/soccer_masters/tree/web_scraping)
+    - dataset from English Premier League website (html scraping)
+  
+2.  Authored by Hunter: [neural_net](https://github.com/jbtrahin/soccer_masters/tree/neural_net)
+    - neural network model outline
+    
+3. Authored by Alfredo: [Champions_League](https://github.com/jbtrahin/soccer_masters/tree/Champions_League)
+    - dataset from English Premier League website (html scraping)
+    - database configuration
+    
+4. Authored by Amik: [Premier League](https://github.com/jbtrahin/soccer_masters/tree/premier_league)
+    - dataset from Champions League website (html scraping)
+    - linear regression model outline
+    
+5. Authored by JB [mpg_scraping](https://github.com/jbtrahin/soccer_masters/tree/mpg_scraping)
+    - dataset from MPG Fantasy Site (api scraping)
+    - Heroku instance set up
+    - Flask app set up
+    - Front end initiation
+
+## Machine Learning Model:
 
 Using Scikit-learn and TensorFlow libraries, we'll be experimenting with different models:
 - Linear Regression models
 - Neural Networks
 
-## Database
+## Database:
 
 We'll use one of Heroku managed data service to create a Heroku Postgres instance that we'll connect to through a Flask app.
 
