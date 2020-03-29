@@ -7,7 +7,8 @@ You can access the heroku app here: [Soccer Master](https://soccer-masters.herok
 
 **Goal:** 
 
-We built a web app that will predict the best premier league fantasy soccer players (forwards) for thge upcoming game.
+We built a web app that will predict the best premier league fantasy soccer players (forwards) for the upcoming game.
+
 More about it on these [google slides](https://docs.google.com/presentation/d/1YtSbjRKvxFkOw0FImH7IjGVvhv1ygMPneUkmmDmC6IA/edit?usp=sharing).
 
 **High-Level Roadmap:**
