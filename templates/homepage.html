@@ -51,20 +51,15 @@
                         <p>Pick a prediction: </p>
                     </div>
                     <div class="col-sm-1 col-md-1 col-lg-1" style="padding: 0px!important">
-                        <form method="POST">
+                        <form method="POST" autocomplete="false">
                             <select onchange="location = this.value">
-                                <div>
-                                    <label>prediction_game28</label>
-                                    <option value="/prediction/game_28">Prediction 1 (game 28)</option>
-                                </div>
-                                <div>
-                                    <label>prediction_game29</label>
-                                    <option value="/prediction/game_29">Prediction 2 (game 29)</option>
-                                </div>
-                                <div> 
-                                    <label>next_game</label>
-                                    <option value="/prediction/next_game">Prediction Next Game</option>
-                                </div>
+                                
+                           <!-- <option value="/prediction/game_28">Prediction 1 (game 28)</option>
+                                <option value="/prediction/game_29">Prediction 2 (game 29)</option>-->
+
+                                <option  value="/" {% if route=='/' %}  selected {% endif %} > -- Pick a prediction -- </option>
+                                
+                                <option value="/prediction/next_game" {% if route=='/prediction/next_game'%}  selected {% endif %}> Prediction Next Game </option>
                             </select>
                         </form>
                     </div>
@@ -73,7 +68,7 @@
 
             <div class="container col-sm-12 col-md-12 col-lg-12">
                     <h3>Displaying EPL Forward Statistics and Predictions</h3>
-                    <div>
+                    <div class="table-responsive">
                         {% for table in tables %}
                             {{ table|safe }}
                         {% endfor %}

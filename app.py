@@ -24,31 +24,39 @@ db = SQLAlchemy(app)
 @app.route("/", methods=["GET", "POST"])
 def homepage():
     # Just return an <html> <table> containing the data queried from the DB
-    fwd_avg_df_game = pd.read_sql('''SELECT * FROM "FWD_Avg"''', con=db.engine, index_col=['index']) 
+    fwd_avg_df_game = pd.read_sql('''SELECT * FROM public."web_fwd_data_mean" ORDER BY "fantasy_points_per_game" DESC LIMIT 50''', con=db.engine, index_col=['Player']) 
     fwd_avg_df_game.index.name = None
-    return render_template('homepage.html', tables=[fwd_avg_df_game.to_html(classes='data')], titles=fwd_avg_df_game.columns.values)
+    return render_template('homepage.html', 
+        tables=[fwd_avg_df_game.to_html(classes='data')], 
+        titles=fwd_avg_df_game.columns.values,
+        route='/')
 
 #Set up prediction routes
-@app.route("/prediction/game_28")
-def get_prediction_28():
-    # Just return an <html> <table> containing the data queried from the DB
-     fwd_avg_df_game = pd.read_sql('''SELECT * FROM "FWD_Avg"''', con=db.engine, index_col=['index'])
-     fwd_avg_df_game.index.name = None   
-     return render_template('homepage.html', tables=[fwd_avg_df_game.to_html(classes='data')], titles=fwd_avg_df_game.columns.values)
 
-@app.route("/prediction/game_29")
-def get_prediction_29():
+# To connect later on
+#@app.route("/prediction/game_28")
+#def get_prediction_28():
     # Just return an <html> <table> containing the data queried from the DB
-     fwd_avg_df_game = pd.read_sql('''SELECT * FROM "FWD_Avg" LIMIT 10''', con=db.engine, index_col=['index'])
-     fwd_avg_df_game.index.name = None   
-     return render_template('homepage.html', tables=[fwd_avg_df_game.to_html(classes='data')], titles=fwd_avg_df_game.columns.values)
+    # fwd_avg_df_game = pd.read_sql('''query next game''', con=db.engine, index_col=['index'])
+    # fwd_avg_df_game.index.name = None   
+    # return render_template('homepage.html', tables=[fwd_avg_df_game.to_html(classes='data')], titles=fwd_avg_df_game.columns.values)
+
+#@app.route("/prediction/game_29")
+#def get_prediction_29():
+    # Just return an <html> <table> containing the data queried from the DB
+    # fwd_avg_df_game = pd.read_sql('''query next game''', con=db.engine, index_col=['index'])
+    # fwd_avg_df_game.index.name = None   
+    # return render_template('homepage.html', tables=[fwd_avg_df_game.to_html(classes='data')], titles=fwd_avg_df_game.columns.values)
 
 @app.route("/prediction/next_game")
 def get_prediction_next_game():
     # Just return an <html> <table> containing the data queried from the DB
-     fwd_avg_df_game = pd.read_sql('''SELECT * FROM "FWD_Avg" LIMIT 1''', con=db.engine, index_col=['index'])
+     fwd_avg_df_game = pd.read_sql('''SELECT "Player", "Min", "fantasy_points_per_game", "pred_fantasy_score_per_remaining_game_weighted" FROM public."web_score_prediction_weighted" ORDER BY "pred_fantasy_score_per_remaining_game_weighted" DESC LIMIT 50''', con=db.engine, index_col=['Player'])
      fwd_avg_df_game.index.name = None   
-     return render_template('homepage.html', tables=[fwd_avg_df_game.to_html(classes='data')], titles=fwd_avg_df_game.columns.values)
+     return render_template('homepage.html', 
+        tables=[fwd_avg_df_game.to_html(classes='data')], 
+        titles=fwd_avg_df_game.columns.values,
+        route='/prediction/next_game')
 
 # Set up a route to display dashboard  
 @app.route("/dashboard")
