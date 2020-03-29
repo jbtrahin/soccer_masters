@@ -1,9 +1,11 @@
 # Soccer Masters
 Building an app to predict the fantasy score of English Premier League forwards.
 
+
 ## Project Overview
 
 You can find our final web app [here](https://soccer-masters.herokuapp.com/)
+
 
 **Goal:** 
 
@@ -26,6 +28,7 @@ More about it on these [google slides](https://docs.google.com/presentation/d/1Y
 6. Build and deploy a Flask app to Heroku to display our data and analysis on the web.
 8. Build a tableau dasbhoard to compare performance of models, and embed Tableau public link into web app.
 9. Build front end using Boostrap to display results in a user-friendly way.
+
 
 ## Resources:
 
@@ -61,7 +64,7 @@ The soccer_masters repository contains:
     - web scraping FBREF for EPL data
     - correlation exploration using linear regression models
     
-5. Authored by JB [mpg_scraping](https://github.com/jbtrahin/soccer_masters/tree/mpg_scraping)
+5. Authored by JB: [mpg_scraping](https://github.com/jbtrahin/soccer_masters/tree/mpg_scraping)
     - API scraping MPG.com for EPL data
     - Heroku instance set up
     - build Flask web app and deployment
@@ -69,11 +72,13 @@ The soccer_masters repository contains:
     - put together Tableau dashboard
     - github master branch management
 
+
 ## Machine Learning Model:
 
 Using Scikit-learn and TensorFlow libraries, we'll be experimenting with different models:
 - Linear Regression models
 - Neural Networks
+
 
 ## Database:
 
