@@ -4,7 +4,7 @@ Building an app to predict the fantasy score of English Premier League forwards.
 
 ## Project Overview
 
-You can find our final web app [here](https://soccer-masters.herokuapp.com/)
+You can find our final web app [here](https://soccer-masters.herokuapp.com/).
 
 
 **Goal:** 
