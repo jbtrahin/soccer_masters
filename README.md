@@ -1,23 +1,31 @@
 # Soccer Masters
-Building an app to predict the best premier league fantasy soccer players week-over-week.
+Building an app to predict the fantasy score of English Premier League forwards.
 
 ## Project Overview
 
+You can find our final web app [here](https://soccer-masters.herokuapp.com/)
+
 **Goal:** 
 
-We want to build a web app that will predict the best premier league fantasy soccer players week-over-week.
+We want to build a web app that will predict the fantasy score of English Premier League forwards based on historical data.
+
 More about it on these [google slides](https://docs.google.com/presentation/d/1YtSbjRKvxFkOw0FImH7IjGVvhv1ygMPneUkmmDmC6IA/edit?usp=sharing).
 
+**Outcome:** 
+
+- Using the last three seasons, we calculated the average fantasy score per game for each EPL forwards currently playing in the league.
+- Using our machine learning model, we predicted the average fantasy score for the 9 remaining games in the league this season.
+
 **High-Level Roadmap:**
-1. Build scrapper on Jupyter Notebooks (**done**).
-2. Build ETL process to build clean dataframe (**done**).
-3. Define machine learning model (**done**).
-4. Train and Test machine learning model (in progress).
-5. Deploy a Flask app to Heroku with a Postgres database (**done**).
-6. Push data to database (in progress).
-7. Push all data (input/output) into database (in progress).
-8. build tableau dasbhoard to compare performance of models.
-9. Build front end (bootstrap template) to display results in a user-friendly way (in progress).
+
+1. Build web and API scrapers to extract historical data from 2 data sources (MPG anf FBREF).
+2. Tranform the dataset to only keep forwards and data relevant to our machine learning models' training and testing.
+3. Explore data correlation using linear regression models.
+4. Train and test a neural network (using linear regression) to output a predicitve fantasy score.
+5. Load all datasets into a PostgreS database hosted on AWS through Heroku host, and proceed data management tasks.
+6. Build and deploy a Flask app to Heroku to display our data and analysis on the web.
+8. Build a tableau dasbhoard to compare performance of models, and embed Tableau public link into web app.
+9. Build front end using Boostrap to display results in a user-friendly way.
 
 ## Resources:
 
@@ -33,27 +41,33 @@ More about it on these [google slides](https://docs.google.com/presentation/d/1Y
 
 The soccer_masters repository contains:
 - [A master branch](https://github.com/jbtrahin/soccer_masters)
-- 5 active branches to scrap and tranform different datasets:
+- 6 active branches to scrap and tranform different datasets:
 
 1. Authored by Hunter: [web_scraping](https://github.com/jbtrahin/soccer_masters/tree/web_scraping)
-    - dataset from English Premier League website (html scraping)
+    - web scraping FBREF for EPL data
+    - data transformation in Jupyter Notebooks
   
 2.  Authored by Hunter: [neural_net](https://github.com/jbtrahin/soccer_masters/tree/neural_net)
-    - neural network model outline
+    - Neural Network outline
+    
+3.  Authored by Hunter: [predictions](https://github.com/jbtrahin/soccer_masters/tree/predictions)
+    - Neural Network predictions
     
 3. Authored by Alfredo: [Champions_League](https://github.com/jbtrahin/soccer_masters/tree/Champions_League)
-    - dataset from English Premier League website (html scraping)
-    - database configuration
+    - web scraping FBREF for Champions League data
+    - database configuration and loading in JUpyter Notebooks
     
 4. Authored by Amik: [Premier League](https://github.com/jbtrahin/soccer_masters/tree/premier_league)
-    - dataset from Champions League website (html scraping)
-    - linear regression model outline
+    - web scraping FBREF for EPL data
+    - correlation exploration using linear regression models
     
 5. Authored by JB [mpg_scraping](https://github.com/jbtrahin/soccer_masters/tree/mpg_scraping)
-    - dataset from MPG Fantasy Site (api scraping)
+    - API scraping MPG.com for EPL data
     - Heroku instance set up
-    - Flask app set up
-    - Front end initiation
+    - build Flask web app and deployment
+    - build front end for web app
+    - put together Tableau dashboard
+    - github master branch management
 
 ## Machine Learning Model:
 
@@ -63,5 +77,5 @@ Using Scikit-learn and TensorFlow libraries, we'll be experimenting with differe
 
 ## Database:
 
-We'll use one of Heroku managed data service to create a Heroku Postgres instance that we'll connect to through a Flask app.
+We'll use one of Heroku managed data service to create a Heroku PostgreS instance that we'll connect to through a Flask app.
 
